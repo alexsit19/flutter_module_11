@@ -22,7 +22,7 @@ class TestViewApp extends StatelessWidget {
             ),
             title: const Text("Test views in flutter"),
           ),
-          body: const TabBarView(
+          body: TabBarView(
             children: [
               WebViewTab(),
               MapViewTab(),

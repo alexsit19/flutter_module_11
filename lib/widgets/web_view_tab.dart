@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_module_11/widgets/webview_navigations_controls.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WebViewTab extends StatefulWidget {
@@ -9,10 +12,41 @@ class WebViewTab extends StatefulWidget {
 }
 
 class _WebViewTabState extends State<WebViewTab> {
+  final controller = Completer<WebViewController>();
+
   @override
   Widget build(BuildContext context) {
-    return const WebView(
-      initialUrl: "https://google.com",
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("WebView"),
+        actions: [
+          NavigationControls(controller: controller),
+        ],
+      ),
+      body: WebView(
+        initialUrl: "https://google.com",
+        onWebViewCreated: (webViewController) {
+          controller.complete(webViewController);
+        },
+      ),
     );
+
+    //Column(
+    //   children: <Widget>[
+    //     Container(
+    //       color: Colors.blue,
+    //       child: Row(
+    //         children: const <Widget>[
+    //           Icon(Icons.arrow_back_ios),
+    //           Icon(Icons.arrow_forward_ios),
+    //           Icon(Icons.replay),
+    //         ],
+    //       ),
+    //     ),
+    //     const WebView(
+    //       initialUrl: "https://google.com",
+    //     ),
+    //   ],
+    // );
   }
 }
