@@ -19,8 +19,8 @@ class NavigationControls extends StatelessWidget {
           return Row(
             children: const <Widget>[
               Icon(Icons.arrow_back_ios),
-              // Icon(Icons.arrow_forward_ios),
-              // Icon(Icons.replay),
+              Icon(Icons.arrow_forward_ios),
+              Icon(Icons.replay),
             ],
           );
         }

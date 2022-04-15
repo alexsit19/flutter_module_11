@@ -30,23 +30,5 @@ class _WebViewTabState extends State<WebViewTab> {
         },
       ),
     );
-
-    //Column(
-    //   children: <Widget>[
-    //     Container(
-    //       color: Colors.blue,
-    //       child: Row(
-    //         children: const <Widget>[
-    //           Icon(Icons.arrow_back_ios),
-    //           Icon(Icons.arrow_forward_ios),
-    //           Icon(Icons.replay),
-    //         ],
-    //       ),
-    //     ),
-    //     const WebView(
-    //       initialUrl: "https://google.com",
-    //     ),
-    //   ],
-    // );
   }
 }

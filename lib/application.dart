@@ -9,9 +9,9 @@ class TestViewApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: DefaultTabController(
-      length: 3,
-      child: Scaffold(
+      home: DefaultTabController(
+        length: 3,
+        child: Scaffold(
           appBar: AppBar(
             bottom: const TabBar(
               tabs: [
@@ -22,13 +22,16 @@ class TestViewApp extends StatelessWidget {
             ),
             title: const Text("Test views in flutter"),
           ),
-          body: TabBarView(
+          body: const TabBarView(
+            physics: NeverScrollableScrollPhysics(),
             children: [
               WebViewTab(),
               MapViewTab(),
               VideoPlayerTab(),
             ],
-          )),
-    ));
+          ),
+        ),
+      ),
+    );
   }
 }
