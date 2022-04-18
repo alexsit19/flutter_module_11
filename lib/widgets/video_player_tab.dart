@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_module_11/widgets/player_tab_content.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoPlayerTab extends StatefulWidget {
@@ -34,58 +35,7 @@ class _VideoPlayerTabState extends State<VideoPlayerTab> {
         future: _initializeVideoPlayerFuture,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            return Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Flexible(
-                  flex: 5,
-                  child: AspectRatio(
-                    aspectRatio: _controller?.value.aspectRatio ?? 1,
-                    child: VideoPlayer(_controller!),
-                  ),
-                ),
-                Flexible(
-                  flex: 1,
-                  child: VideoProgressIndicator(
-                    _controller!,
-                    allowScrubbing: true,
-                    colors: const VideoProgressColors(
-                        backgroundColor: Colors.red,
-                        bufferedColor: Colors.lightBlue,
-                        playedColor: Colors.blueAccent),
-                  ),
-                ),
-                Flexible(
-                  flex: 1,
-                  child: Container(
-                    color: Colors.black,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        IconButton(
-                          icon: const Icon(
-                            Icons.play_arrow,
-                            color: Colors.white,
-                          ),
-                          onPressed: () {
-                            _controller?.play();
-                          },
-                        ),
-                        IconButton(
-                          onPressed: () {
-                            _controller?.pause();
-                          },
-                          icon: const Icon(
-                            Icons.pause,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            );
+            return PlayerTabContent(controller: _controller);
           } else {
             return const Center(
               child: CircularProgressIndicator(),

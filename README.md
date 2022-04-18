@@ -1,16 +1,21 @@
 # flutter_module_11
-
-A new Flutter project.
+flutter_module_11
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+For download this project. use next command
 
-A few resources to get you started if this is your first Flutter project:
+git clone <git@github.com:alexsit19/flutter_module_11.git>
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+next step: open flutter_module_11 in Android Studio
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+than run command: git checkout feature/main_screen
+
+in android studio go in file/settings choose Languages & Frameworks
+choose Dart point and enter path to dart on your hard disc.
+
+Then you need register free key for yandex maps
+
+and insert it in /android/local.properties
+
+in terminal of Android Studio run command flutter run
