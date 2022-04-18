@@ -1,6 +1,8 @@
 # flutter_module_11
 flutter_module_11
 
+In this app three tabs, where testing WebView, VideoPlayer, YandexMap
+
 ## Getting Started
 
 For download this project. use next command
@@ -18,4 +20,4 @@ Then you need register free key for yandex maps
 
 and insert it in /android/local.properties
 
-in terminal of Android Studio run command flutter run
+in terminal of Android Studio run command "flutter run"
